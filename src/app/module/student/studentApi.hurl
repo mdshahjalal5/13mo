@@ -6,7 +6,7 @@ GET  http://localhost:3000/api/v1/students/2030100001
 
 GET  http://localhost:3000/api/v1/students/33333333
 
-DELETE  http://localhost:3000/api/v1/students/33333333
+DELETE  http://localhost:3000/api/v1/students/2030030001
 
 POST http://localhost:3000/api/v1/users/create-student
 Content-Type: application/json
@@ -21,7 +21,7 @@ Content-Type: application/json
     },
     "gender": "male",
     "dateOfBirth": "2002-05-15",
-    "email": "johndroe@exampleee.com",
+    "email": "jjohndroe@exampleee.com",
     "contactNo": "+8801712345678",
     "emergencyContactNo": "+8801711122233",
     "bloodGroup": "O+",
