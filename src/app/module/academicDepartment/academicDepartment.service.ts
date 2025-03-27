@@ -1,3 +1,4 @@
+import AppError from "../../Errors/AppError";
 import { TAcademicDepartment } from "./academicDepartment.interface";
 import { AcademicDepartment } from "./academicDepartment.model";
 
@@ -22,7 +23,7 @@ const updateAcademicDepartmentIntoDB = async (
 ) => {
   const isExist = await AcademicDepartment.findById(id);
   if (!isExist) {
-    throw new Error("Academic department is not exist !!");
+    throw new AppError(404, "Academic department is not exist !!");
   }
   const result = await AcademicDepartment.findOneAndUpdate(
     { _id: id },
