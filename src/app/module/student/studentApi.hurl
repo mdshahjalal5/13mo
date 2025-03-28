@@ -2,11 +2,24 @@ GET  http://localhost:3000/api/v1/students
 
 GET  http://localhost:3000/api/v1/studentss
 
-GET  http://localhost:3000/api/v1/students/2030100001
+GET  http://localhost:3000/api/v1/students/2030030001
 
 GET  http://localhost:3000/api/v1/students/33333333
 
 DELETE  http://localhost:3000/api/v1/students/2030030001
+
+PATCH  http://localhost:3000/api/v1/students/2030030001
+Content-Type: application/json
+{
+  "student": {
+    "name": {
+      "firstName": "Jamal"
+    },
+    "email": "jamaljamal.doe@example.com"
+  }
+}
+
+
 
 POST http://localhost:3000/api/v1/users/create-student
 Content-Type: application/json

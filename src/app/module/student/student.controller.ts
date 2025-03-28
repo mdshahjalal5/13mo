@@ -1,5 +1,7 @@
 import { StudentService } from "./student.service";
 import catchAsync from "../../utils/catchAsync";
+import sendResponse from "../../utils/sendResponse";
+import httpStatus from "http-status";
 
 const getAllStudents = catchAsync(async (req, res) => {
   const allStudents = await StudentService.getAllStudentsFromDb();
@@ -30,8 +32,22 @@ const deleteStudent = catchAsync(async (req, res) => {
   });
 });
 
+const updateStudent = catchAsync(async (req, res) => {
+  const { studentId } = req.params;
+  const { student } = req.body;
+  const result = await StudentService.updateStudentIntoDB(studentId, student);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Student is updated succesfully",
+    data: result,
+  });
+});
+
 export const StudentController = {
   getStudentById,
   deleteStudent,
   getAllStudents,
+  updateStudent,
 };
